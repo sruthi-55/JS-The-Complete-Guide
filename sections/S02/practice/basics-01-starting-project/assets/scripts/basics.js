@@ -19,3 +19,11 @@ let val = `(${defRes}+10*3)`; //template literal
 let wSpace = `1
                 2`;
 //set "white-space: pre" in css style
+
+
+3 + '3' //'33'
+3 - '3' //0
+3 * '3' //9
+3 / '3' //1
+
+'hi' - 'i'  //Nan
