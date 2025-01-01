@@ -1,12 +1,44 @@
 const defRes = 0;
 let curRes = defRes;
 
-curRes += 10 * 3;
-let calDesc = `(${defRes}+10*3)`;
-outputResult(curRes, calDesc);
-
-
-function add(num1, num2) {
-  return num1 + num2;
+function getUserInput(){
+  return parseInt(userInput.value);
 }
-alert("Addition result is: "+add(2,3));
+
+function createWriteLog(operator, resBeforeCal, num){
+  let calcDesc = `${resBeforeCal} ${operator} ${num}`;
+  outputResult(curRes,calcDesc);
+}
+
+function add() {
+  const enteredNum = getUserInput();
+  const iniRes = curRes;
+  curRes = curRes + enteredNum;  //Number() or +userInput
+  createWriteLog('+',iniRes,enteredNum);
+}
+
+function subtract(){
+  const enteredNum = getUserInput();
+  const iniRes = curRes;
+  curRes = curRes - enteredNum;  
+  createWriteLog('-',iniRes,enteredNum);
+}
+
+function multiply(){
+  const enteredNum = getUserInput();
+  const iniRes = curRes;
+  curRes = curRes * enteredNum; 
+  createWriteLog('*',iniRes,enteredNum); 
+}
+
+function divide(){
+  const enteredNum = getUserInput();
+  const iniRes = curRes;
+  curRes = curRes / enteredNum;
+  createWriteLog('/',iniRes,enteredNum);
+}
+
+addBtn.addEventListener('click',add);
+subtractBtn.addEventListener('click',subtract);
+multiplyBtn.addEventListener('click',multiply);
+divideBtn.addEventListener('click',divide);
