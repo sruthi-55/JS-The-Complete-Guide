@@ -1,0 +1,7 @@
+Format document (Forced) - ^F
+
+select next occurence - Cmd + D
+select all occurrences - Cmd + Shift + L
+
+Move line up - Opt + uparrow
+Copy line up - Opt + Shift + uparrow

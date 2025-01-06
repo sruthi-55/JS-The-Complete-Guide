@@ -1,0 +1,19 @@
+Adjusting VSCode settings
+https://code.visualstudio.com/docs/getstarted/settings
+
+
+
+VS Code Docs: 
+https://code.visualstudio.com/docs
+
+VS Code Keybindings: 
+https://code.visualstudio.com/docs/getstarted/keybindings
+
+VS Code Extensions Docs: 
+https://code.visualstudio.com/docs/editor/extension-gallery
+
+Google Chrome DevTools Docs: 
+https://developers.google.com/web/tools/chrome-devtools/
+
+
+Debugger for Chrome - VSCode extension
