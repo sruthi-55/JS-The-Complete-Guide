@@ -23,11 +23,18 @@ function writeToLog(ev,val,currPlayerHealth,currMonsterHealth){
     monsterHealth: currMonsterHealth
   };
 
-  if(ev === 'PLAYER_ATTACK')  logEntry.target = 'MONSTER';
-  else if(ev === 'PLAYER_STRONG_ATTACK')  logEntry.target = 'MONSTER';
-  else if(ev === 'MONSTER_ATTACK')  logEntry.target = 'PLAYER';
-  else if(ev === 'PLAYER_HEAL') logEntry.target = 'PLAYER';
-
+  switch(ev){
+    case 'PLAYER_ATTACK': 
+      logEntry.target = 'MONSTER';  break;
+    case 'PLAYER_STRONG_ATTACK': 
+      logEntry.target = 'MONSTER';  break;
+    case 'MONSTER_ATTACK':
+      logEntry.target = 'PLAYER'; break;
+    case 'PLAYER_HEAL':
+      logEntry.target = 'PLAYER'; break;
+    default:  logEntry={};
+  }
+  
   battleLog.push(logEntry);
 }
 
@@ -104,7 +111,8 @@ function healPlayerHandler(){
 }
 
 function printLogHandler(){
-  console.log(battleLog);
+  for(const logEntry of battleLog)
+    console.log(logEntry);
 }
 
 attackBtn.addEventListener('click',attackHandler);
