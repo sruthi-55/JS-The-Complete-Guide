@@ -54,7 +54,30 @@ function divide(){
   writeToLog('DIVIDE',iniRes,enteredNum,curRes);
 }
 
-addBtn.addEventListener('click',add);
-subtractBtn.addEventListener('click',subtract);
+function calculate(operation){
+  const enteredNum = getUserInput();
+  const iniRes = curRes;
+  let op;
+  if(operation === 'ADD'){
+    op = '+'; 
+    curRes += enteredNum;
+  }
+  else if(operation === 'SUBTRACT'){
+    op = '-';
+    curRes -= enteredNum;
+  }
+  else if(operation === 'MULTIPLY'){
+    op = '*';
+    curRes *= enteredNum;
+  }
+  else{
+    op = '/';
+    curRes /= enteredNum;
+  }
+  createWriteLog(op,iniRes,enteredNum);
+  writeToLog(operation,iniRes,enteredNum,curRes);
+}
+addBtn.addEventListener('click',calculate.bind(this, 'ADD'));
+subtractBtn.addEventListener('click',calculate.bind(this, 'SUBTRACT'));
 multiplyBtn.addEventListener('click',multiply);
 divideBtn.addEventListener('click',divide);
